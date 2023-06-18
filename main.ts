@@ -17,3 +17,7 @@ const address: TypeAddress = {
     city: 'SPB',
     country: 'Russia',
 }
+
+let common: TypeUser & TypeAddress
+
+common = { ...user, ...address }
