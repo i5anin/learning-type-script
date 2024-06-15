@@ -59,7 +59,7 @@ const pair2: IPair<string, string> = {
     key: '1',
     value: '1',
 }
-
+// @ts-ignore
 function getNameLength<T extends TypeLength>(entity: T): number {
     return entity.length
 }

@@ -3,12 +3,13 @@
 type TypePerson = {
     age: number // свойство "age" типа number (возраст пользователя)
 }
-
+// @ts-ignore
 type TypeUser = {
     name: string // свойство "name" типа string (имя пользователя)
     email: string // свойство "email" типа string (адрес электронной почты пользователя)
 } & TypePerson
 
+// @ts-ignore
 const user: TypeUser = {
     email: '834565ttregdefg@rg.ewr', // присваиваем значению свойства "email" строку
     name: 'Max', // присваиваем значению свойства "name" строку
@@ -34,7 +35,7 @@ interface IUser extends IUserAge {
     name: string // свойство "name" типа string (имя пользователя)
     email: string // свойство "email" типа string (адрес электронной почты пользователя)
 }
-
+// @ts-ignore
 const user: IUser = {
     email: '834565ttregdefg@rg.ewr', // присваиваем значению свойства "email" строку
     name: 'Max', // присваиваем значению свойства "name" строку

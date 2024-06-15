@@ -7,27 +7,32 @@ interface ICar {
 }
 
 // Интерфейс `ICarCreate` расширяет интерфейс `ICar`, но исключает свойство `id`.
-interface ICarCreate extends Omit<ICar, 'id'> {}
+interface ICarCreate extends Omit<ICar, 'id'> {
+}
 
 // Интерфейс `ICarId` выбирает только свойство `id` из интерфейса `ICar`.
-interface ICarId extends Pick<ICar, 'id'> {}
+interface ICarId extends Pick<ICar, 'id'> {
+}
 
 // ----------------------------------------------------------------
 
 // Интерфейс `IOptionalCar` использует утилиту типа `Partial`,
 // которая делает все свойства интерфейса `ICar` необязательными.
 // Теперь все свойства в `IOptionalCar` могут быть присутствовать или отсутствовать.
-interface IOptionalCar extends Partial<ICar> {}
+interface IOptionalCar extends Partial<ICar> {
+}
 
 // Интерфейс `IRequiredCar` использует утилиту типа `Required`,
 // которая делает все свойства интерфейса `ICar` обязательными.
 // Теперь все свойства в `IRequiredCar` должны быть указаны при создании объекта этого типа.
-interface IRequiredCar extends Required<ICar> {}
+interface IRequiredCar extends Required<ICar> {
+}
 
 // Интерфейс `IReadonlyCar` использует утилиту типа `Readonly`,
 // которая делает все свойства интерфейса `ICar` только для чтения.
 // Теперь все свойства в `IReadonlyCar` не могут быть изменены после создания объекта этого типа.
-interface IReadonlyCar extends Readonly<ICar> {}
+interface IReadonlyCar extends Readonly<ICar> {
+}
 
 // ----------------------------------------------------------------
 
@@ -43,7 +48,7 @@ type TypeCarRecord = Record<'name' | 'price', string | number>
 // Утилиты `Omit`, `Pick` и `Partial` являются полезными инструментами в TypeScript, которые позволяют создавать новые типы на основе существующих типов с определенными изменениями.
 // `Omit` исключает указанные свойства из типа, `Pick` выбирает только указанные свойства из типа, а `Partial` делает все свойства типа необязательными.
 // Эти утилиты упрощают работу с типами и позволяют создавать более гибкие и точные типизации в TypeScript.
-
+// @ts-ignore
 const car: IOptionalCar = {}
 
 // В данном коде определены различные интерфейсы, использующие встроенные утилиты типов TypeScript.
@@ -58,18 +63,18 @@ type Return = ReturnType<TypeGetName>
 
 // Тип TypeGetName представляет функцию, которая не принимает аргументы и возвращает строку.
 // Тип Return представляет возвращаемый тип функции, указанной в TypeGetName.
-
+// @ts-ignore
 type Any = Extract<'max' | 'andrey', 'andrey' | 'misha'>
 // Тип Any представляет пересечение типов, полученных из объединения строковых литералов.
 // В данном случае, тип Any будет равен строковому литералу 'andrey', так как он есть в обоих операндах.
-
+// @ts-ignore
 type Any = Exclude<'max' | 'andrey', 'andrey' | 'misha'>
 // Тип Any представляет разность типов, полученных из объединения строковых литералов.
 // В данном случае, тип Any будет равен строковому литералу 'max', так как 'andrey' исключается.
 
 type NotNull = NonNullable<string | number | null | undefined>
 // Тип NotNull представляет тип, исключая null и undefined из объединения типов string, number, null и undefined.
-
+// @ts-ignore
 const car: IRequiredCar = {}
 
 // Переменная car объявлена с типом IRequiredCar, который является интерфейсом, делающим все свойства интерфейса ICar обязательными.

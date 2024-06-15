@@ -14,6 +14,7 @@ interface IUser {
     role: EnumRoles // Свойство "role" типа EnumRoles (роль пользователя)
     color: EnumColors // Свойство "color" типа EnumColors (цвет пользователя)
 }
+// @ts-ignore
 const user: IUser = {
     role: EnumRoles.ADMIN, // Присваиваем значению свойства "role" роль "ADMIN"
     color: EnumColors.black, // Присваиваем значению свойства "color" цвет "black"

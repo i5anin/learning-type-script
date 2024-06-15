@@ -22,13 +22,14 @@ const getNumbers = (...numbers: number[]) => {
 }
 
 // Функциональные перегрузки
-// Указываем сигнатуры функции до её вызова и реализации для принятия разных аргументов
+// Указываем, сигнатуры функции до её вызова и реализации для принятия разных аргументов
 function getCar(name: string): string // Сигнатура функции для одного аргумента типа string
 function getCar(name: string, price: number): string // Сигнатура функции для двух аргументов: string и number
 function getCar(name: string, price?: number): string {
     return price ? `Название ${name}, Цена ${price}` : `Название ${name}` // Возвращается строка с информацией о машине
 }
-
+// @ts-ignore
 const car1 = getCar('bmw') // Название bmw
+// @ts-ignore
 const car2 = getCar('bmw', 100000) // Название bmw, Цена 100000
 // const car3 = getCar('bmw', 100000, 'rwegf'); // Ошибка компиляции: несоответствие количества аргументов сигнатуре функции
